@@ -1,0 +1,4 @@
+
+
+
+print("De l'equació ")

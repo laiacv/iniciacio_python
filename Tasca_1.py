@@ -34,7 +34,7 @@ x1_2 = x1*x1
 x1_3 = x1*x1*x1
 
 # Mostra el resultat de l'equació amb el segon número que diu l'usuari
-opera2 = print(float((a_3*x1_3+a_2*x1_2-a_1*x1_1+a_0))
+opera2 = print(float((a_3*x1_3+a_2*x1_2-a_1*x1_1+a_0)))
 
 # Si l'operació 2 es igual a 0, però la primera no ha donat 0
 if opera2 == 0 and opera1 != 0:

@@ -23,113 +23,65 @@ vides = 3
 punts = 0
 index_pregunta = 0 # Per saber per quina pregunta anem (0, 1, 2...)
 
+# presenta el joc a l'usuari i li diu quantes vides té
 print("😈 BENVINGUT AL TRIVIAL DE LA MORT 😈")
 print(f"Comences amb {vides} vides. Bona sort...\n")
 
 
-# Pista: El joc ha de continuar MENTRE quedin vides (> 0) I l'índex sigui menor que el total de preguntes.
+# El joc continuarà mentre quedin vides (> 0) I l'índex sigui menor que el total de preguntes.
 while vides > 0 and index_pregunta < len(banc_de_preguntes):
 
-    # --------------------------------------------------------------------------
-    # PAS A: Recuperar la informació
-    # --------------------------------------------------------------------------
-    # TODO: Crea una variable 'pregunta_actual' i assigna-li el diccionari que toca segons l'índex.
-    
+    # a la variable 'pregunta_actual' se li dona el valor del diccionari que toca segons l'índex.
+    pregunta_actual = banc_de_preguntes[index_pregunta]
 
-    # --------------------------------------------------------------------------
-    # PAS B: Mostrar per pantalla
-    # --------------------------------------------------------------------------
-    # TODO: Fes print de l'enunciat i de les opcions possibles.
+    # mostra a l'usuari l'enunciat de la pregunta i les opcions possibles.
+    print(f"Pregunta: {pregunta_actual["enunciat"]}")
     
+    for resposta in pregunta_actual["opcions"]:
+        print("     " + resposta)
+    
+    # Assegura que l'usuari introdueix un NÚMERO enter i que sigui una de les 3 opcions.
+    while True:
+        try:
+            resposta_usuari = int(input("Respon la pregunta: "))
+            if 1 <= resposta_usuari <= 3:
+                break
+            else:
+                print("Posa una de les 3 opcions. Torna-ho a provar")
+        except ValueError:
+            print("Has d'introduir un número enter. Torna-ho a provar")
 
-    # --------------------------------------------------------------------------
-    # PAS C: Demanar resposta a l'usuari (Validació)
-    # --------------------------------------------------------------------------
-    # TODO: Fes un bucle infinit amb TRY-EXCEPT per assegurar que l'usuari introdueix un NÚMERO enter.
-    # Guarda la resposta en una variable.
-    
+    # determina si la resposta de l'usuari és la 'correcta' del diccionari
+    # - Si encerta: Se'l felicita i se li sumen 10 punts
+    # - Si falla: Se'l resta 1 vida i se li diu quantes li queden.
+    if pregunta_actual["correcta"] == resposta_usuari:
+        print("Molt bé, tens 10 punts més!!!!!!!!!!!!!!") #14
+        punts += 10
+        print(f"Tens {punts} punts en total")
+    else:
+        vides -= 1
+        print(f"T'has equivocat. :( Et queden {vides} vides")
 
-    # --------------------------------------------------------------------------
-    # PAS D: Comprovar si ha encertat (Lògica del joc)
-    # --------------------------------------------------------------------------
-    # TODO: Fes un IF/ELSE comparant la resposta de l'usuari amb la 'correcta' del diccionari.
-    # - Si encerta: Suma 10 punts i felicita'l.
-    # - Si falla: Resta 1 vida i avisa'l de quantes li queden.
-    
-
-    # --------------------------------------------------------------------------
-    # PAS E: Avançar
-    # --------------------------------------------------------------------------
-    # TODO: IMPORTANT! Incrementa l'índex per passar a la següent pregunta a la propera volta.
-    
-    
+    # Suma líndex de la pregunta en +1 per passar a la següent pregunta quan torni a fer el bucle
+    index_pregunta += 1
     print("-" * 30) # Separador estètic entre preguntes
 
-
-# ==============================================================================
-# 3. FINAL DEL JOC
-# ==============================================================================
-
-# TODO: Fora del bucle, comprova com ha acabat la partida.
-# - Si vides és 0 -> GAME OVER.
-# - Si no -> ENHORABONA.
-# Finalment, mostra els punts totals.
-
-
-
-
-
-
-
-# ==============================================================================
-# 2. BUCLE PRINCIPAL DEL JOC
-# ==============================================================================
-
-# TODO: Defineix el WHILE. 
-# Pista: El joc ha de continuar MENTRE quedin vides (> 0) I l'índex sigui menor que el total de preguntes.
-while vides > 0 and index_pregunta < len(banc_de_preguntes):
-
-    # --------------------------------------------------------------------------
-    # PAS A: Recuperar la informació
-    # --------------------------------------------------------------------------
-    # TODO: Crea una variable 'pregunta_actual' i assigna-li el diccionari que toca segons l'índex.
-    
-
-    # --------------------------------------------------------------------------
-    # PAS B: Mostrar per pantalla
-    # --------------------------------------------------------------------------
-    # TODO: Fes print de l'enunciat i de les opcions possibles.
-    
-
-    # --------------------------------------------------------------------------
-    # PAS C: Demanar resposta a l'usuari (Validació)
-    # --------------------------------------------------------------------------
-    # TODO: Fes un bucle infinit amb TRY-EXCEPT per assegurar que l'usuari introdueix un NÚMERO enter.
-    # Guarda la resposta en una variable.
-    
-
-    # --------------------------------------------------------------------------
-    # PAS D: Comprovar si ha encertat (Lògica del joc)
-    # --------------------------------------------------------------------------
-    # TODO: Fes un IF/ELSE comparant la resposta de l'usuari amb la 'correcta' del diccionari.
-    # - Si encerta: Suma 10 punts i felicita'l.
-    # - Si falla: Resta 1 vida i avisa'l de quantes li queden.
-    
-
-    # --------------------------------------------------------------------------
-    # PAS E: Avançar
-    # --------------------------------------------------------------------------
-    # TODO: IMPORTANT! Incrementa l'índex per passar a la següent pregunta a la propera volta.
-    
-    
-    print("-" * 30) # Separador estètic entre preguntes
-
-
-# ==============================================================================
-# 3. FINAL DEL JOC
-# ==============================================================================
-
-# TODO: Fora del bucle, comprova com ha acabat la partida.
-# - Si vides és 0 -> GAME OVER.
-# - Si no -> ENHORABONA.
-# Finalment, mostra els punts totals.
+# Li proporciona a l'usuar un resum de la partida
+# - Si té 0 vides -> GAME OVER.
+if vides == 0:
+    print("GAME OVER")
+else:   # S'executa s l'usuari li queda alguna vida
+    print(f"Has sobreviscut. Amb {punts} punts en total.\nENHORABONA") # Diu els punts que ha aconseguit l'usuari
+    # A partir d'aquí té més sentit si el trivial tingués més preguntes
+    puntuacio = (punts / (len(banc_de_preguntes) * 10)) * 10    # calcula la nota del usuari a partir de la puntuació aconseguida entre el nombre de preguntes que hi ha al test (x 10, perquè cada pregunta dona 10 punts) sobre 10 (el segon x10)
+    if 5 <= puntuacio < 7:
+        print("Has sobreviscut satisfacoriament, és encara més sorprenent")
+    elif 7 <= puntuacio < 9:
+        print("Has sobreviscut notablement, és encara més sorprenent")
+    elif 9 <= puntuacio < 10:
+        print("Ho has fet gairebé perfecte, ets fascinant :O")
+    elif puntuacio == 10:
+        print("Ho has fet perfecte, ets fascinant :O")
+    else:
+        print("Has sobreviscut, però has d'estudiar més que el pròxim com no tindràs tanta sort ;)")
+        

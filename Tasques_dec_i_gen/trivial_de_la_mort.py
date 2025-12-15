@@ -24,8 +24,10 @@ punts = 0
 index_pregunta = 0 # Per saber per quina pregunta anem (0, 1, 2...)
 
 # presenta el joc a l'usuari i li diu quantes vides té
-print("😈 BENVINGUT AL TRIVIAL DE LA MORT 😈")
+print("\n😈 BENVINGUT AL TRIVIAL DE LA MORT 😈")
+time.sleep(0.5)
 print(f"Comences amb {vides} vides. Bona sort...\n")
+time.sleep(1)
 
 
 # El joc continuarà mentre quedin vides (> 0) I l'índex sigui menor que el total de preguntes.
@@ -58,14 +60,17 @@ while vides > 0 and index_pregunta < len(banc_de_preguntes):
         print("Molt bé, tens 10 punts més!!!!!!!!!!!!!!") #14
         punts += 10
         print(f"Tens {punts} punts en total")
+        time.sleep(2)
     else:
         vides -= 1
         print(f"T'has equivocat. :( Et queden {vides} vides")
+        time.sleep(2)
 
     # Suma líndex de la pregunta en +1 per passar a la següent pregunta quan torni a fer el bucle
     index_pregunta += 1
     print("-" * 30) # Separador estètic entre preguntes
 
+time.sleep(1.5)
 # Li proporciona a l'usuar un resum de la partida
 # - Si té 0 vides -> GAME OVER.
 if vides == 0:
@@ -75,13 +80,13 @@ else:   # S'executa s l'usuari li queda alguna vida
     # A partir d'aquí té més sentit si el trivial tingués més preguntes
     puntuacio = (punts / (len(banc_de_preguntes) * 10)) * 10    # calcula la nota del usuari a partir de la puntuació aconseguida entre el nombre de preguntes que hi ha al test (x 10, perquè cada pregunta dona 10 punts) sobre 10 (el segon x10)
     if 5 <= puntuacio < 7:
-        print("Has sobreviscut satisfacoriament, és encara més sorprenent")
+        print(f"Has sobreviscut satisfacoriament, és encara més sorprenent ({puntuacio:.2f})/10)")
     elif 7 <= puntuacio < 9:
-        print("Has sobreviscut notablement, és encara més sorprenent")
+        print(f"Has sobreviscut notablement, és encara més sorprenent ({puntuacio:.2f}/10)")
     elif 9 <= puntuacio < 10:
-        print("Ho has fet gairebé perfecte, ets fascinant :O")
+        print(f"Ho has fet gairebé perfecte, ets fascinant :O ({puntuacio:.2f}/10)")
     elif puntuacio == 10:
-        print("Ho has fet perfecte, ets fascinant :O")
+        print(f"Ho has fet perfecte, ets fascinant :O ({puntuacio:.2f}/10)")
     else:
-        print("Has sobreviscut, però has d'estudiar més que el pròxim com no tindràs tanta sort ;)")
+        print(f"Has sobreviscut, però has d'estudiar més que el pròxim com no tindràs tanta sort ;) ({puntuacio}/10)")
         

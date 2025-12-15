@@ -1,6 +1,6 @@
 import time 
 
-banc_de_preguntes = [
+banc_de_preguntes = [       # Es una llista que cada element d'aquesta és un diccionari (amb les seves claus; enunciat (la pregunta), opcions (les opcions que té l'usuari) i correcta (la resposta correcta de les opcions))
     {
         "enunciat": "Quin és el planeta més gran del Sistema Solar?",
         "opcions": ["1. Mart", "2. Júpiter", "3. Terra"],
@@ -27,7 +27,7 @@ index_pregunta = 0 # Per saber per quina pregunta anem (0, 1, 2...)
 print("\n😈 BENVINGUT AL TRIVIAL DE LA MORT 😈")
 time.sleep(0.5)
 print(f"Comences amb {vides} vides. Bona sort...\n")
-time.sleep(1)
+time.sleep(1) # és una pausa del temps entre parèntesi
 
 
 # El joc continuarà mentre quedin vides (> 0) I l'índex sigui menor que el total de preguntes.
@@ -48,22 +48,22 @@ while vides > 0 and index_pregunta < len(banc_de_preguntes):
             resposta_usuari = int(input("Respon la pregunta: "))
             if 1 <= resposta_usuari <= 3:
                 break
-            else:
-                print("Posa una de les 3 opcions. Torna-ho a provar")
-        except ValueError:
+            else: # s'executa si l'usuari escriu un nombre que no està entre l'1 i el 3 inclòs
+                print("Posa una de les 3 opcions. Torna-ho a provar") 
+        except ValueError:      # s'executa quan l'usuari introdueix algun element que no és un nombre enter
             print("Has d'introduir un número enter. Torna-ho a provar")
 
     # determina si la resposta de l'usuari és la 'correcta' del diccionari
     # - Si encerta: Se'l felicita i se li sumen 10 punts
     # - Si falla: Se'l resta 1 vida i se li diu quantes li queden.
     if pregunta_actual["correcta"] == resposta_usuari:
-        print("Molt bé, tens 10 punts més!!!!!!!!!!!!!!") #14
-        punts += 10
-        print(f"Tens {punts} punts en total")
-        time.sleep(2)
+        print("Molt bé, tens 10 punts més!!!!!!!!!!!!!!") # felicita a l'usuari i li diu que ara té 10 punts més (14)
+        punts += 10     # li suma 10 punts
+        print(f"Tens {punts} punts en total") # li diu quants punts té l'usuari
+        time.sleep(2) 
     else:
-        vides -= 1
-        print(f"T'has equivocat. :( Et queden {vides} vides")
+        vides -= 1  # li resta 1 vida a l'usuari
+        print(f"T'has equivocat. :( Et queden {vides} vides") # li diua l'usuari que s'ha equivocat i li diu quantes vides té
         time.sleep(2)
 
     # Suma líndex de la pregunta en +1 per passar a la següent pregunta quan torni a fer el bucle

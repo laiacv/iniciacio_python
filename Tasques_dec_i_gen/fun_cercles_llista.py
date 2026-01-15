@@ -12,11 +12,11 @@ def calcul_area_cercles(radis: list, text_final: str = "acabat") -> list:
         print(f"\nEl cercle {comptador} té un radi de: {radi} unitats")
 
         # Calculem l'àrea del triangle
-        area = (np.py) * (radi)**2
-
+        area = round((np.pi) * (radi)**2, 2)
+        
         arees.append(area)
        
-        print(f"Per tant, el cercle {comptador} té una àrea de: {area} unitats quadrades")
+        print(f"Per tant, el cercle {comptador} té una àrea de: {area:.2f} unitats quadrades\n")
 
         print("-" * 30)
 
@@ -26,8 +26,8 @@ def calcul_area_cercles(radis: list, text_final: str = "acabat") -> list:
     return arees
 
 
-llista_arees = calcul_area_cercles(radis, "hem acabat")
+llista_arees = calcul_area_cercles(radis, "\nHem acabat")
 
 print(llista_arees)
 
-print("--- Programa finalitzat ---")
+print("\n--- Programa finalitzat ---")

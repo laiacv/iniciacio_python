@@ -3,7 +3,7 @@ bases = [2, 4, 6] # crea una llista amb les bases de cada triangle
 altures = [1, 5, 15] # crea una llista amb les altures de cada triangle
 
 # definim una funció per calcular les àrees dels triangles la qual té com a paràmetres una 
-# lista que es dirà bases, una altre que es dirà altures i un string que es dirà text_final 
+# llista que es dirà bases, una altre que es dirà altures i un string que es dirà text_final 
 # amb valor predeterminat: acabat, dins de la funció. I la funció ha de retornar una llista
 def calcul_area_triangle(bases: list, altures: list, text_final: str = "acabat") -> list:
 
@@ -40,8 +40,8 @@ def calcul_area_triangle(bases: list, altures: list, text_final: str = "acabat")
     return arees
 
 # la variable llista_arees el que fa es cridar la funció calcul_area_triangles, dient que la 
-# llista de bases que hi ha fora la funció serà la mateixa a la variable bases de hi ha dins,
-# al igual amb la variable altures i li dona el valor: hem acabat, a ka variable de text_final
+# llista de bases que hi ha fora la funció serà la mateixa a la variable bases que hi ha dins,
+# al igual amb la variable altures i li dona el valor: hem acabat, a la variable de text_final
 llista_arees = calcul_area_triangle(bases, altures, "hem acabat")
 
 # mostra per pantalla/executa la variable llista_arees, la qual es la que crida la funció

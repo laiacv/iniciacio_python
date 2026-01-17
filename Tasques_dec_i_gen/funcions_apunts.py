@@ -74,13 +74,13 @@ triangles = [
     {"base": 12, "altura": 7}
 ]
 
-def calcul_area_triangle(triangles: dict, text_final: str) -> list:
+def calcul_area_triangle(triangles: list, text_final: str) -> list:
     """
     Aquesta funció calcula les àrees dels triangles del diccionari i la 
     retorna en una llista 
     
-    :param triangles: Un diccionari que conté les dades de cada triangle, les seves claus han de ser "base" i "altura"
-    :type triangles: dict
+    :param triangles: Una llista que conté diccionaris dins amb les dades de cada triangle, les seves claus han de ser "base" i "altura"
+    :type triangles: list
     :param text_final: Text que es mostra per pantalla en finalitzat
     :type text_final: str
     :return: Àrees dels triangles del diccionari en una llista

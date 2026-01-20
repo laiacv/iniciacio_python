@@ -6,6 +6,18 @@ altures = [1, 5, 15] # crea una llista amb les altures de cada triangle
 # llista que es dirà bases, una altre que es dirà altures i un string que es dirà text_final 
 # amb valor predeterminat: acabat, dins de la funció. I la funció ha de retornar una llista
 def calcul_area_triangle(bases: list, altures: list, text_final: str = "acabat") -> list:
+    """
+    Docstring para calcul_area_triangle
+    
+    :param bases: llista que introdueix que es fa fora de la funció de les bases dels triangles
+    :type bases: list
+    :param altures: llista que introdueix que es fa fora de la funció de les altures dels triangles
+    :type altures: list
+    :param text_final: string el qual pot decidir l'usuari o per defecte és "acabat"
+    :type text_final: str
+    :return: retorna una llista, la llista d'àrees
+    :rtype: list
+    """
 
     # dona a la variable comptador el valor 1
     comptador = 1

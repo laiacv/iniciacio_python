@@ -6,6 +6,16 @@ radis = [3, 2, 7, 15] # crea una llista amb els radis de cada cercle
 # llista que es dirà radis i un string que es dirà text_final amb valor predeterminat: 
 # acabat, dins de la funció. I la funció ha de retornar una llista
 def calcul_area_cercles(radis: list, text_final: str = "acabat") -> list:
+    """
+    Docstring para calcul_area_cercles
+    
+    :param radis: llista la qual introduirà l'usuari
+    :type radis: list
+    :param text_final: string el qual pot decidir l'usuari o per defecte és "acabat"
+    :type text_final: str
+    :return: retorna una llista, la llista d'àrees
+    :rtype: list
+    """
 
     # dona a la variable comptador el valor 1
     comptador = 1

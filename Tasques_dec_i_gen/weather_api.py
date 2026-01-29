@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 
 def crida_api(api_key: str, ciutat: str, dies: int):
     
@@ -14,6 +15,7 @@ def crida_api(api_key: str, ciutat: str, dies: int):
     }
     
     print(f"\n🌍 Connectant amb el satèl·lit per veure el temps a {ciutat}...")
+    time.sleep(1.5)
     
     resposta = requests.get(base_url, params=parametres)
     
@@ -28,7 +30,8 @@ def crida_api(api_key: str, ciutat: str, dies: int):
             # indent=4 fa que el text sigui llegible per humans
             json.dump(dades, fitxer, indent=4, ensure_ascii=False)
         
-        print(f"\✅ Dades guardades correctament a: {nom_fitxer}")
+        print(f"\n✅ Dades guardades correctament a: {nom_fitxer}")
+        time.sleep(1)
         # --------------------------------------
         
         data_actual = dades["forecast"]["forecastday"][0]["day"]["maxtemp_c"]
@@ -37,29 +40,34 @@ def crida_api(api_key: str, ciutat: str, dies: int):
        # print(f"🌡️  Ara mateix a {ciutat} esteu a: {temp_actual}ºC")
       #  print(f"🌡️  Ara mateix a {ciutat} esteu a: {temp_max}ºC")
 
-        print("\nPREVISIÓ PER A TOKYO")
+        print(f"\nPREVISIÓ PER A {ciutat.upper()}")
         print("--------------------")
         for i in range(dies):
-            data_actual = dades["forecast"]["forecastday"][i]["day"]["maxtemp_c"]
-            temp_max = dades["forecast"]["forecastday"][i]["date"]
-            freq_barres = temp_max//3
+            temp_max = dades["forecast"]["forecastday"][i]["day"]["maxtemp_c"]
+            data_actual = dades["forecast"]["forecastday"][i]["date"]
+            freq_barres = int(temp_max // 3)
             if temp_max < 14:
                 estat = "Fred"
             elif 14 <= temp_max <= 17.5:
                 estat = "Agradable" 
             else:
                 estat = "Calorós"
-            print(f"{data_actual} | {█ * freq_barres} {temp_max} ({estat})")
-        #temp_actual = dades["current"]["temp_c"]
-        #print(f"{data_actual} | █████ 15.5°C (Agradable)")
-        #2026-02-12 | ████ 13.2°C (Fred)
+            print(f"{data_actual} | {"█" * freq_barres} {temp_max} ({estat})")
     
     else:
         print(f"❌ Error {resposta.status_code}: No s'ha pogut obtenir la informació.")
 
 # --- CONFIGURACIÓ ---
 api_key = "62c192a50ec440b68f2122508262101" # Recorda posar la teva clau real!
-ciutat = input("\n> De quina ciutat vols saber el temps? ")
-dies = int(input("> Quants dies? (entre 1 i 14) ")) 
 
-crida_api(api_key, ciutat, dies)
+while True:
+    ciutat = input("\n> De quina ciutat vols saber el temps? ")
+    dies = int(input("> Quants dies? (entre 1 i 14) ")) 
+    
+    crida_api(api_key, ciutat, dies)
+
+    seguir = input("> Vols consultar una altra ciutat? (S/N): ").lower()
+    if seguir != "s":
+        break
+    else:
+        continue

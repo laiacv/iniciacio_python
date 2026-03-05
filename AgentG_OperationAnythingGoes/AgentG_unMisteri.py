@@ -17,7 +17,8 @@ def main():
         print(f"Error: No s'ha trobat el fitxer '{html_file}'.")
         return
 
-    print("--- AGENT G: MISSIÓ VIL·LA ENIGMÀTICA ---")
+    print("--- AGENT G: OPERATION ANYTHING GOES ---")
+    print("Una missió d'espionatge de 15-20 minuts.")
     print(f"Servidor iniciat a: http://localhost:{PORT}")
     print("Si estàs a VS Code/Codespaces, apareixerà una notificació per obrir el navegador.")
     print("Prem CTRL+C per tancar el servidor quan acabis de jugar.")

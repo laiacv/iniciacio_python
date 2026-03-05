@@ -7,9 +7,8 @@ PORT = 8000
 Handler = http.server.SimpleHTTPRequestHandler
 
 def main():
-    # El fitxer que volem servir és 'index.html'
-    # Però per defecte el servidor busca 'index.html', així que fem un truc:
-    # Si no existeix index.html, el creem temporalment o simplement avisem.
+    # Canviem el directori de treball al directori del fitxer per trobar index.html
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
     html_file = "index.html"
     

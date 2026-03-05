@@ -884,21 +884,23 @@
     }
 
     function executeFinalSequence() {
+        // Guardem els crèdits abans d'esborrar el body
+        const credits = document.getElementById('credits-overlay');
         document.body.innerHTML = `<div style="width:100%; height:100vh; background:#000; color:#0f0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; font-family:monospace;">
                 <h1 style="font-size:60px; color:var(--accent);">MISSIÓ COMPLETADA</h1>
                 <p style="font-size:20px;">L'Agent G ha recuperat l'Arxiu Omega.</p>
                 <p style="color:#444;">L'ombra de l'arbre (${state.treeHeight}m) ha permès desxifrar el codi ${state.hackingCode}.</p>
                 <div style="display:flex; gap:20px; margin-top:50px;">
                     <button onclick="location.reload()" style="padding:20px 40px; background:var(--accent); border:none; cursor:pointer; font-weight:bold; letter-spacing:2px;">REINICIAR</button>
-                    <button onclick="showCredits()" style="padding:20px 40px; background:#222; color:white; border:1px solid var(--accent); cursor:pointer; font-weight:bold; letter-spacing:2px;">CRÈDITS</button>
+                    <button id="credits-btn-final" style="padding:20px 40px; background:#222; color:white; border:1px solid var(--accent); cursor:pointer; font-weight:bold; letter-spacing:2px;">CRÈDITS</button>
                 </div>
             </div>`;
+        document.body.appendChild(credits);
+        document.getElementById('credits-btn-final').onclick = showCredits;
     }
 
     function showCredits() {
-        const overlay = document.getElementById('credits-overlay');
-        document.body.appendChild(overlay);
-        overlay.style.display = 'flex';
+        document.getElementById('credits-overlay').style.display = 'flex';
     }
 
     function shootLaser(e) {

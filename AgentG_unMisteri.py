@@ -7,13 +7,19 @@ PORT = 8000
 Handler = http.server.SimpleHTTPRequestHandler
 
 def main():
-    # Canviem el directori de treball al directori del fitxer per trobar index.html
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    # Busquem el directori del joc
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    game_folder = "AgentG_OperationAnythingGoes"
+    game_path = os.path.join(base_dir, game_folder)
     
-    html_file = "index.html"
-    
-    if not os.path.exists(html_file):
-        print(f"Error: No s'ha trobat el fitxer '{html_file}'.")
+    # Si som a l'arrel, entrem a la carpeta del joc
+    if os.path.exists(game_path):
+        os.chdir(game_path)
+    elif os.path.exists("index.html"):
+        # Ja som dins la carpeta (o l'arrel té el fitxer)
+        pass
+    else:
+        print(f"Error: No s'ha trobat la carpeta '{game_folder}' o el fitxer 'index.html'.")
         return
 
     print("--- AGENT G: OPERATION ANYTHING GOES ---")
@@ -25,10 +31,11 @@ def main():
     print("------------------------------------------")
     print("Prem CTRL+C per tancar el servidor quan acabis de jugar.")
     
-    # Intentem obrir el navegador automàticament (per si estàs en local)
-    webbrowser.open(f"http://localhost:{PORT}/{html_file}")
+    # Intentem obrir el navegador automàticament
+    webbrowser.open(f"http://localhost:{PORT}/index.html")
 
     # Iniciem el servidor
+    # Allow address reuse to avoid "Address already in use" errors
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
         try:

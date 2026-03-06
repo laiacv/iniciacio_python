@@ -7,13 +7,12 @@ PORT = 8000
 Handler = http.server.SimpleHTTPRequestHandler
 
 def main():
-    # Canviem el directori de treball al directori del fitxer per trobar index.html
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    # Establir el directori de treball on es troba el fitxer
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(base_dir)
     
-    html_file = "index.html"
-    
-    if not os.path.exists(html_file):
-        print(f"Error: No s'ha trobat el fitxer '{html_file}'.")
+    if not os.path.exists("index.html"):
+        print(f"Error: No s'ha trobat el fitxer 'index.html' a {base_dir}.")
         return
 
     print("--- AGENT G: OPERATION ANYTHING GOES ---")
@@ -25,10 +24,11 @@ def main():
     print("------------------------------------------")
     print("Prem CTRL+C per tancar el servidor quan acabis de jugar.")
     
-    # Intentem obrir el navegador automàticament (per si estàs en local)
-    webbrowser.open(f"http://localhost:{PORT}/{html_file}")
+    # Intentem obrir el navegador automàticament
+    webbrowser.open(f"http://localhost:{PORT}/index.html")
 
     # Iniciem el servidor
+    # Allow address reuse to avoid "Address already in use" errors
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
         try:

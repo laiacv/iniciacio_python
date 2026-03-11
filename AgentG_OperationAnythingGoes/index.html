@@ -572,6 +572,10 @@
     bgMusic.loop = true;
     bgMusic.volume = 0.2; // Música més fluixa
 
+    const hackMusic = new Audio('musica_hackeig.mp3');
+    hackMusic.loop = true;
+    hackMusic.volume = 0; // Comença muda
+
     function playSound(freq, type, dur, vol = 0.4) { // Volum per defecte més alt
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const osc = audioCtx.createOscillator();
@@ -643,9 +647,11 @@
         musicOn = !musicOn;
         if (musicOn) {
             bgMusic.play().catch(e => console.log("Audio play blocked", e));
+            if (state.flags.hacking) hackMusic.play().catch(e => console.log("Hacking music blocked", e));
             startMusicLoop();
         } else {
             bgMusic.pause();
+            hackMusic.pause();
             clearInterval(musicInterval);
             musicInterval = null;
         }
@@ -991,7 +997,20 @@
         if (state.flags.powerOn) {
             state.flags.hacking = true;
             state.flags.isTense = true; // Canvia la música a tensió
-            if (musicOn) startMusicLoop();
+            if (musicOn) {
+                startMusicLoop();
+                // Transició de música: baixa bgMusic i puja hackMusic proporcionalment
+                hackMusic.play().catch(e => console.log("Hacking music blocked", e));
+                let fadeInterval = setInterval(() => {
+                    if (bgMusic.volume > 0.02) bgMusic.volume -= 0.02;
+                    else bgMusic.volume = 0;
+                    
+                    if (hackMusic.volume < 0.38) hackMusic.volume += 0.04;
+                    else hackMusic.volume = 0.4;
+                    
+                    if (bgMusic.volume === 0 && hackMusic.volume === 0.4) clearInterval(fadeInterval);
+                }, 100);
+            }
             
             updateTerminal("SISTEMA ACTIU: Introdueix el codi de seguretat Omega per extreure l'arxiu.");
             document.getElementById('numpad-overlay').style.display = 'flex';
@@ -1002,6 +1021,11 @@
     }
 
     function executeFinalSequence() {
+        // Atura la música
+        bgMusic.pause();
+        hackMusic.pause();
+        if (musicInterval) clearInterval(musicInterval);
+
         // Guardem els crèdits abans d'esborrar el body
         const credits = document.getElementById('credits-overlay');
         document.body.innerHTML = `<div style="width:100%; height:100vh; background:#000; color:#0f0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; font-family:monospace;">

@@ -16,9 +16,10 @@ Aquest fitxer és la memòria viva del projecte. Serveix perquè Gemini CLI (IA)
 ## 2. ESTRUCTURA DE FITXERS
 Tots els fitxers estan agrupats a la carpeta `/AgentG_OperationAnythingGoes/`:
 1. `index.html`: Conté tot el motor del joc (HTML, CSS i la lògica JS).
-2. `musica_AgentG.mp3`: Banda sonora principal del joc.
-3. `AgentG_unMisteri.py`: Llançador del servidor web (automatitzat per carregar l'index.html local).
-4. `diàleg_gem_JocAgentG.md`: Aquest document de context actualitzat.
+2. `musica_AgentG.mp3`: Banda sonora principal del joc (Música d'exploració).
+3. `musica_hackeig.mp3`: Banda sonora de la fase final de hacking.
+4. `AgentG_unMisteri.py`: Llançador del servidor web (automatitzat per carregar l'index.html local).
+5. `diàleg_gem_JocAgentG.md`: Aquest document de context actualitzat.
 
 ## 3. MECÀNIQUES DE JOC DETALLADES
 

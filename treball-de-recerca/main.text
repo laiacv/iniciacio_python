@@ -1,0 +1,312 @@
+\documentclass[12pt,a4paper,oneside]{report}
+% --- YOU MUST INCLUDE THESE TWO PACKAGES ---
+\usepackage{xcolor}
+\usepackage{listings}
+
+% --- DEFINE THE COLORS FIRST ---
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{codegray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{codeblue}{rgb}{0.13, 0.13, 1}
+
+% --- THEN CONFIGURE LSTSET ---
+\lstset{
+    backgroundcolor=\color{codebackground},
+    commentstyle=\color{codegray},
+    keywordstyle=\color{codeblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{red},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    xleftmargin=10pt
+}
+% --- Paquets bàsics ---
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{setspace}
+\onehalfspacing 
+
+% --- Tipografia Moderna ---
+% Utilitzem una lletra Sans Serif (sense remats) que dona un aspecte molt més net i actual.
+% Source Sans Pro és ideal. Si el teu compilador no la té instal·lada, 
+% pots fer servir: \usepackage{helvet} i \renewcommand{\familydefault}{\sfdefault}
+\usepackage[default]{sourcesanspro}
+
+% --- Disseny i Colors ---
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{enumitem}
+% Configurem hyperref perquè els enllaços tinguin color i no recuadres lletjos
+\usepackage[colorlinks=true, linkcolor=MidnightBlue, urlcolor=TealBlue, citecolor=RoyalBlue]{hyperref} 
+
+% --- Capçaleres i Peus de pàgina ---
+\usepackage{fancyhdr}
+\setlength{\headheight}{25pt} % Afegeix aquesta línia!
+\pagestyle{fancy}
+\fancyhf{} % Neteja la configuració per defecte de LaTeX
+
+% Personalització de la línia de la capçalera (color Blau per anar a joc)
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{MidnightBlue}\leaders\hrule height \headrulewidth\hfill}}
+
+% Contingut de la capçalera
+% [L] Esquerra: Nom i Institut
+\fancyhead[L]{\small\color{gray} Laia Cabrera Vallejos | Institut Escola Sant Pol de Mar} 
+% [R] Dreta: Títol del CAPÍTOL actual (utilitzem \leftmark)
+\fancyhead[R]{\small\color{MidnightBlue} \nouppercase{\leftmark}} 
+
+% --- NOU: Forçar la capçalera a totes les pàgines (inclosos inicis de capítol) ---
+\makeatletter
+\let\ps@plain\ps@fancy
+\makeatother
+
+% Contingut del peu de pàgina
+% [C] Centre: Número de pàgina
+\fancyfoot[C]{\thepage}
+
+% --- Correcció per a títols sense número ---
+% Ens assegurem que agafi només el nom net del capítol
+\makeatletter
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\makeatother
+
+% --- Configuració de codi (listings) ---
+\lstset{
+    backgroundcolor=\color{codebackground},   
+    commentstyle=\color{codegray},
+    keywordstyle=\color{codeblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{lightgray},
+    xleftmargin=10pt
+}
+
+% --- Configuració de Jerarquia (Sense números) ---
+% Aquesta comanda amaga els números (1, 1.1, 1.1.1...) a tot el document
+\setcounter{secnumdepth}{0} 
+
+% --- Configuració de Títols (Colors i Indentació) ---
+
+% CAPÍTOL (Nivell 1): Blau fosc (MidnightBlue), lletra enorme, sense indentació.
+\titleformat{\chapter}[block]
+  {\normalfont\Huge\bfseries\color{MidnightBlue}}{}{0pt}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{30pt}
+
+% SECCIÓ (Nivell 2): Blau reial (RoyalBlue), lletra gran, indentació lleugera (0.5 cm).
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries\color{RoyalBlue}}{}{0pt}{}
+\titlespacing*{\section}{0cm}{18pt}{10pt}
+
+% SUBSECCIÓ (Nivell 3): Blau verdós (TealBlue), lletra mitjana, indentació mitjana (1 cm).
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries\color{TealBlue}}{}{0pt}{}
+\titlespacing*{\subsection}{0cm}{14pt}{8pt}
+
+% SUBSUBSECCIÓ (Nivell 4): Blau grisós (CadetBlue), mida text, indentació profunda (1.5 cm).
+\titleformat{\subsubsection}[block]
+  {\normalfont\normalsize\bfseries\color{CadetBlue}}{}{0pt}{}
+\titlespacing*{\subsubsection}{0.5cm}{10pt}{5pt}
+
+% ---------------------------------------------------------
+% INICI DEL DOCUMENT
+% ---------------------------------------------------------
+\begin{document}
+
+% --- PORTADA ---
+\begin{titlepage}
+    \centering
+    \begin{tcolorbox}[colback=white, colframe=NavyBlue, arc=0pt, outer arc=0pt, height=24.5cm, boxrule=2pt]
+        
+        \vspace{1cm}
+        {\Large \textbf{Institut Escola Sant Pol de Mar}} \\[2.5cm]
+        
+        % TÍTOL
+        {\Huge \textbf{La comunicació a través dels sentits}} \\[0.8cm]
+        {\Large \textit{Disseny i utilitat d'una taula sensorial per a persones amb dificultats comunicatives}} \\[0.5cm]
+        
+        % IMATGE A SOTA DEL TÍTOL
+        \begin{center}
+            % Quan tinguis la imatge real, pots substituir el tcolorbox d'abaix per:
+            % \includegraphics[width=10cm]{nom_imatge.jpg} o .png
+            \begin{tcolorbox}[colback=gray!5, colframe=gray!20, width=10cm, height=6cm, halign=center, valign=center]
+                \textcolor{gray!50}{\textit{Espai per a la imatge central}}
+            \end{tcolorbox}
+        \end{center}
+        
+        \vspace{1cm}
+        
+        \textbf{\large Treball de Recerca de Batxillerat} \\[1.5cm]
+        
+        % LOGOTIP A L'ESQUERRA I DADES A LA DRETA
+        \begin{minipage}[b]{0.45\textwidth}
+            \begin{flushleft}
+                % Quan tinguis el logotip, pots substituir el tcolorbox per:
+                % \includegraphics[width=4cm]{nom_logo.png}
+                \begin{tcolorbox}[colback=gray!5, colframe=gray!20, width=5cm, height=3.5cm, halign=center, valign=center]
+                    \textcolor{gray!50}{\textit{Espai per al logotip}}
+                \end{tcolorbox}
+            \end{flushleft}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\textwidth}
+            \begin{flushright}
+                \large
+                \textbf{Autora:} Laia Cabrera Vallejos \\
+                \textbf{Tutor:} Enric Abadal Maestro \\
+                \textbf{Curs:} 2025-2026
+            \end{flushright}
+        \end{minipage}
+        \vspace*{0.5cm} % Petit marge inferior dins la caixa blava
+    \end{tcolorbox}
+\end{titlepage}
+
+% --- ÍNDEX (Opcional però recomanat) ---
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+% --- CAPÍTOL 1: INTRODUCCIÓ ---
+\chapter{Introducció i Motivació}
+\thispagestyle{fancy}
+
+\section{Motius de la tria}
+La importància que té la comunicació pel nostre desenvolupament i la frustració per culpa de les dificultats que poden tenir algunes persones al intentar comunicar-se.
+
+Comunicar-nos no només serveix per saber els interessos o conèixer a altres persones, sinó també per crear comunitats o grups socials. A més de tot això, l'ésser humà és un ser sociable i és frustrant quan la comunicació costa o hi ha dificultats.
+
+\section{Orientació del treball}
+Aquest treball s'orienta cap a quatre eixos principals:
+\begin{itemize}
+    \item \textbf{Inclusió:} Enfocada a l'autonomia i la qualitat de vida.
+    \item \textbf{Logopèdia:} Des d'una perspectiva terapèutica.
+    \item \textbf{Educació especial:} Aplicació en l'àmbit de les escoles.
+    \item \textbf{Vida diària:} Utilitat pràctica i quotidiana.
+\end{itemize}
+
+\section{Altres consideracions}
+Existeix una necessitat real de millorar els recursos per a persones amb dificultats comunicatives. Cal tenir en compte l'impacte social i emocional de no poder comunicar-se, així com les possibles mancances actuals en aquest camp.
+
+% --- CAPÍTOL 2: MARC TEÒRIC ---
+\chapter{Marc Teòric}
+
+\section{Comunicació}
+La comunicació és la base de la interacció humana. Segons la recerca realitzada, es divideix en diferents tipus:
+
+\subsection{Verbal} 
+Ús de la paraula (oral o escrita) per transmetre un missatge. És el mètode més comú.
+
+\subsection*{No verbal}
+Són els missatges que enviem sense paraules: gestos, postura, contacte visual i expressions facials. En la comunicació diària, aquest tipus sol transmetre més informació emocional que les mateixes paraules.
+
+\subsection*{Comunicació Augmentativa i Alternativa (CAA)}
+Sistemes, eines i estratègies que complementen (augmentativa) o substitueixen (alternativa) la parla quan aquesta no és funcional. Es divideix en dues branques:
+
+\subsubsection{CAA Sense Ajuda (No assistida)}
+No requereix cap objecte extern. La persona fa servir el seu propi cos.
+{Exemples:} Llengua de signes, gestos codificats o l'ús de la mirada.
+
+\subsubsection{CAA Amb Ajuda (Assistida):} Requereix l'ús d'una eina o suport extern.
+{Baixa tecnologia:} Quaderns de comunicació, pictogrames (com el sistema SPC o ARASAAC) o llibres de fotos.
+{Alta tecnologia:} Són aparells digitals que ajuden a parlar. Per exemple, aplicacions per a tauletes (com Proloquo2Go), equips que transformen el que escrius en veu o sistemes que permeten controlar l'ordinador només amb la mirada.
+
+
+
+\section{Sistemes de suport}
+S'han identificat diferents tipus de sistemes:
+\begin{itemize}
+    \item \textbf{Suport gràfic:} Ús de pictogrames. Destaca el portal \textbf{ARASAAC}, que és el portal de pictogrames més utilitzat.
+    \item \textbf{Tecnologia:} Sistemes amb tecnologia i sistemes sense tecnologia.
+\end{itemize}
+
+\section{Integració sensorial}
+Definició de com el cervell processa els estímuls. S'analitza la relació entre l'estímul sensorial i la resposta comunicativa, així com els beneficis de l'estimulació multisensorial.
+
+\section{Dificultats comunicatives}
+Aquest apartat analitza les causes (tipus), les barreres socials i l'impacte emocional que pateixen els usuaris. La taula sensorial té una utilitat real per a:
+\begin{itemize}
+    \item TEA (Trastorn de l'espectre autista).
+    \item Paràlisi cerebral.
+    \item Infants amb retard del llenguatge.
+    \item Discapacitat intel·lectual.
+\end{itemize}
+
+% --- CAPÍTOL 3: OBJECTIUS I HIPÒTESI ---
+\chapter{Objectius i Hipòtesi}
+
+\section{Objectius}
+L'objectiu central és elaborar la taula sensorial com a eina de suport per facilitar la comunicació.
+\begin{itemize}
+    \item Analitzar les necessitats comunicatives del col·lectiu escollit.
+    \item Investigar la relació entre estímuls sensorials i comunicació.
+    \item Valorar l'utilitat pràctica de la taula.
+\end{itemize}
+
+\section{Hipòtesi (Preguntes inicials)}
+\begin{itemize}
+    \item Pot una taula sensorial millorar la comunicació en persones amb dificultats?
+    \item Quins tipus d'estímuls són més efectius?
+    \item La comunicació augmentativa combinada amb estímuls sensorials augmenta la participació?
+    \item Com afecta emocionalment poder comunicar necessitats bàsiques?
+    \item Com adaptar la taula a diferents dificultats i nivells?
+\end{itemize}
+
+% --- CAPÍTOL 4: METODOLOGIA ---
+\chapter{Metodologia}
+Per al desenvolupament del treball s'han seguit els següents mètodes i passos:
+\begin{enumerate}
+    \item \textbf{Observació:} Estudi directe de casos i necessitats.
+    \item \textbf{Entrevistes:} Recollida d'informació (ex. Entrevista a Horitzó).
+    \item \textbf{Proves:} Funcionament, proves i aplicació real de la taula.
+    \item \textbf{Recollida de dades i informació:} Anàlisi de com adaptar la taula a cada individu.
+\end{enumerate}
+
+% --- CAPÍTOL 5: CONCLUSIONS ---
+\chapter{Conclusions}
+\textit{[Espai reservat per a les conclusions finals del treball]}
+
+% --- BIBLIOGRAFIA ---
+\chapter*{Bibliografia i Webgrafia}
+\addcontentsline{toc}{chapter}{Bibliografia i Webgrafia}
+
+% En aquest apartat es recullen les fonts consultades seguin la normativa APA (7a edició).
+
+\begin{description}[style=unboxed, leftmargin=0cm, itemsep=1em]
+
+    \item[ARASAAC.] (s.d.). \textit{¿Qué es la comunicación aumentativa y alternativa?}. Portal del Gobierno de Aragón. \url{https://arasaac.org/aac/es}
+
+    \item[Institut Obert de Catalunya.] (s. d.). \textit{Atenció a la comunicació.}. \url{https://ioc.xtec.cat/materials/FP/Recursos/fp_apd_m09_/web/fp_apd_m09_htmlindex/WebContent/u1/a1/continguts.html}
+
+    \item[Pàgina] (Any). \textit{Títol}. \url{enllaç}
+
+\end{description}
+
+\end{document}
+

@@ -23,31 +23,8 @@ Aquest document conté el context i les regles per polir el poema bilingüe (cat
 - Les propostes de poliment s'han d'escriure en un fitxer separat (p.ex. `proposta_poema.md`) a la mateixa carpeta `POEMA/`.
 - L'IA ha de mantenir aquestes notes sempre actualitzades si es defineixen noves regles.
 
----
-
-## Versió Polida del Poema (En procés)
-
-### Estrofa 1
-Se me encoge el corazón,  
-cada vez que en un rincón,  
-lloras sin razón.
-
-### Estrofa 2
-Quiero acercarme, romper tu silencio,  
-pero me pierdo en el eco de mi voz.  
-Mis manos tiemblan, el mundo es un peso  
-que parece pesar mucho más que tú,  
-y yo, desde lejos, tan solo pretendo  
-sostener un poco de tu azul.
-
-### Estrofa 3
-Camines pels carrers com si res no importés,  
-sense mirar tot el que tens al voltant.  
-Els núvols s'apropen i tu no pots veure  
-que encara hi ha llum d'esperança entre ells.  
-M'agradaria palpar la teva por  
-amb paraules que siguin prou tendres,  
-però em quedo callat, mirant-te de lluny,  
-buscant la manera de fer-me entendre,  
-buscant el moment que per fi em veguis.
-
+> **Notes de revisió (Estrofa 6):**
+> - **Mètrica i Rima:** S'ha afegit puntuació per tancar el grup de rimes asonants (*ganas/acompaña/aguarda*).
+> - **Lirisme:** S'ha consolidat "**lo que el alma calla**" per donar més profunditat emocional que la fórmula impersonal.
+> - **Metàfora:** S'ha fixat "**leve latido**" per representar l'esforç fràgil de l'autor.
+> - **Fluïdesa:** S'ha canviat "por intento" per "**en mi intento**" per suavitzar el ritme de l'últim vers.

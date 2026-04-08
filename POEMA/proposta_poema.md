@@ -32,12 +32,12 @@ buscant el moment que per fi em veguis.
 Escribo este poema porque hablar  
 me resulta del todo imposible.  
 Cada verso es un paso que no doy  
-por cobarde, por miedo al rechazo.  
-Esa sombra que vence mi valor,  
-y me aleja del calor de tu abrazo.
+por temor, por miedo al rechazo.  
+Esa sombra que vence mi valor  
+y me aleja del calor de tu abrazo.  
 Quisiera decir que no estás tan sola,  
-que alguien te espera, siempre, en silencio.  
-Pero mi timidez pesa más que el aire.
+que alguien te espera, siempre en silencio,  
+mas mi timidez pesa más que el aire.
 
 
 ### Estrofa 5 (Català)
@@ -50,23 +50,22 @@ i només per tu, vull que
 sigui real com el meu silenci   
 i tan únic, com tu, i prou. I punt.
 
-### Estrofa 6 (Castellà / Bilingüe)
+### Estrofa 6 (Castellà)
 Y aunque me quede callado,  
-y el miedo pese más que  
-mis ganas, escribo estas  
-líneas para ti, para que  
-sientas que alguien te (acompaña (, aunque sea de lejos)),  
-entiende.
+y el miedo pese más que mis ganas,  
+escribo estas líneas para ti,  
+para que sientas que alguien te acompaña,  
+desde la distancia, y siempre te aguarda.
 
-Porque no hay mejor  
-manera de decir (explicar) lo que con palabras 
-que no se atrevería a pronunciar, (lo que  
-se calla, que con una carta, bien dedicada y) 
+Porque no hay mejor manera  
+de explicar lo que con palabras  
+no me atrevo a pronunciar,  
+lo que el alma calla, que con una carta  
+con esmero dedicada.
 
-en ella/s pongo mi cuidado,  
-mi intento, mi pequeño (se podria poner una metafora o figura retoria para pequeño)  
-intento de estar cerca.
-
+en ella pongo mi cuidado,  
+mi anhelo, mi leve latido  
+en mi intento de estar a tu lado.
 ---
 
 ### SEGONA PART (Transició)

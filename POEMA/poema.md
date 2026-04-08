@@ -12,7 +12,7 @@ Aquest document conté el context i les regles per polir el poema bilingüe (cat
 - **Frase eliminada (part2.jpg):** S'ha confirmat l'eliminació de la frase subratllada ("Las días guardan tu rastro...").
 
 ## Regles d'Or (Restrictions)
-1. **Estructura Immòbil:** No es pot modificar l'estructura del poema MAI.
+1. **Estructura Immòbil:** No es pot modificar l'estructura del poema MAI, però MAI.
 2. **Ordre del Poema:** L'ordre de les frases/versos no es pot canviar sense permís explícit de l'usuari.
 3. **Idiomes:** El poema és bilingüe (català i castellà intercalats). Cal respectar aquest caràcter.
 4. **Prioritats de poliment:**
@@ -50,3 +50,4 @@ amb paraules que siguin prou tendres,
 però em quedo callat, mirant-te de lluny,  
 buscant la manera de fer-me entendre,  
 buscant el moment que per fi em veguis.
+

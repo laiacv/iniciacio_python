@@ -29,26 +29,26 @@ buscant la manera de fer-me entendre,
 buscant el moment que per fi em veguis.
 
 ### Estrofa 4 (Castellà)
-Escribo este poema porque hablar me  
-resulta imposible.  
-Cada línea es un paso que no me atrevo  
-a dar, por cobarde, por el miedo al rechazo,  
-que es mucho mayor (hace una sombra) a mi valor,  
-(una sombra) mucho mayor a cualquier intento de abrazo,  
-(o) de apoyo.  
-Quisiera decir que no estás sola,  
-que alguien te apoya (espera).  
-Pero mi timidez pesa más que el espacio (aire).
+Escribo este poema porque hablar  
+me resulta del todo imposible.  
+Cada verso es un paso que no doy  
+por cobarde, por miedo al rechazo.  
+Esa sombra que vence mi valor,  
+y me aleja del calor de tu abrazo.
+Quisiera decir que no estás tan sola,  
+que alguien te espera, siempre, en silencio.  
+Pero mi timidez pesa más que el aire.
+
 
 ### Estrofa 5 (Català)
-No vull fer un dels (classics) típics poemes  
-d'amor que trobes a qualsevol  
-racó, no vull que sigui gaire  
-escoltat. Ni que sigui  (increïble)
-meravellós, vull que sigui per tu,  
-i ningú més (i només per tu), vull que  
-sigui real (autèntica) com el meu amor a tu   
-i únic, com tu, i prou (punt).
+No vull fer un d'aquells clàssics poemes  
+d'amor que trobes a qualsevol racó,
+no vull escriure paraules de cristall
+no vull que sigui gaire escoltat. 
+Ni que sigui meravellós, vull que sigui per tu,  
+i només per tu, vull que  
+sigui real com el meu silenci   
+i tan únic, com tu, i prou. I punt.
 
 ### Estrofa 6 (Castellà / Bilingüe)
 Y aunque me quede callado,  

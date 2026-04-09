@@ -10,10 +10,10 @@ cada vez que en un rincón,
 lloras sin razón.
 
 ### Estrofa 2 (Castellà)
-Quiero acercarme, romper tu silencio,  
+Quisiera acercarme, romper tu silencio,  
 pero me pierdo en el eco de mi voz.  
 Mis manos tiemblan, el mundo es un peso  
-que parece pesar mucho más que tú,  
+que parece pesar (mucho) más que tu alma,  
 y yo, desde lejos, tan solo pretendo  
 sostener un poco de tu azul.
 
@@ -35,7 +35,7 @@ Cada verso es un paso que no doy
 por temor, por miedo al rechazo.  
 Esa sombra que vence mi valor  
 y me aleja del calor de tu abrazo.  
-Quisiera decir que no estás tan sola,  
+Quisiera decir que no estás sola,  
 que alguien te espera, siempre en silencio,  
 mas mi timidez pesa más que el aire.
 
@@ -44,7 +44,8 @@ mas mi timidez pesa más que el aire.
 No vull fer un d'aquells clàssics poemes  
 d'amor que trobes a qualsevol racó,
 no vull escriure paraules de cristall
-no vull que sigui gaire escoltat. 
+ni vull que sigui gaire escoltat. 
+(ni que el vers es torni una buida cançó.)
 Ni que sigui meravellós, vull que sigui per tu,  
 i només per tu, vull que  
 sigui real com el meu silenci   
@@ -63,34 +64,35 @@ no me atrevo a pronunciar,
 lo que el alma calla, que con una carta  
 con esmero dedicada.
 
-en ella pongo mi cuidado,  
-mi anhelo, mi leve latido  
+En ella pongo mi cuidado,  
+mi anhelo y mi leve latido  
 en mi intento de estar a tu lado.
 ---
 
 ### SEGONA PART (Transició)
 
-I justament aquell dia que tot semblava possible,  
-els teus passos se'n van, i jo només tinc silencis invisibles.  
-Les paraules que mai vaig dir ballen en l'aire, (lleus com plom) (aquell que sempre ens separava)
-i el teu blau se m'escapa mentre intento  
-agafar-lo amb els ulls.
+I justament aquell dia que tot semblava possible,
+els teus passos se'n van, deixant-me silencis invisibles.
+Les paraules que mai vaig dir ballen a l'aire, que ens separava,
+i el teu blau se m'escapa mentre intento
+agafar-lo amb la mirada.
 
-Se me encoge el corazón cada vez que, en un rincón,  
-lloras sin razón. Ahora solo escucho ecos  
-donde antes había tu canción. 
+Se me encoge el corazón cada vez que, en un rincón,
+lloras sin razón. Ahora solo escucho ecos
+donde antes sonaba tu canción.
 
-Nunca supe si un gesto habría cambiado tu azul,  
-ni si un abrazo a tiempo habría sostenido tu luz.  
-Queda en silencio lo que callé y el aire lo  
+Nunca supe si un gesto habría tu azul,
+ni si un abrazo a tiempo habría sostenido tu luz.
+Queda en silencio lo que callé y el aire lo
 sabe también.
 
-Potser encara hi ets a temps,  
-jo també vaig creure en el temps (en ell).  
-I el temps em va fer callar (tancar la boca).  
+Potser encara hi ets a temps,
+jo també vaig creure en ell.
+I, al final, em va fer callar.
 
-No cometis el meu silenci.  
+No cometis el meu silenci.
 
-Si encara ho pots dir, fes-ho.  
-Mai és massa d'hora,  
-però el massa tard arriba, sense avisar.
+Si encara ho pots dir, fes-ho.
+Mai és massa d'hora,
+però el massa tard arriba, sense demora.
+

@@ -1,4 +1,4 @@
----
+gei---
 name: skill-gatekeeper
 description: Gestor d'activació de skills per sessió. S'ha de fer servir al principi de cada conversa o tasca nova per preguntar a l'usuari si vol activar les skills. Si l'usuari diu que no, NO s'han d'activar ni fer servir altres skills durant la sessió.
 ---

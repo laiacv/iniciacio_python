@@ -1,0 +1,14 @@
+# LaTeX Temporary Files
+*.aux
+*.log
+*.toc
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.pdf
+main.pdf
+
+# OS Files
+.DS_Store
+Thumbs.db
